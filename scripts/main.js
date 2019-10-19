@@ -14,7 +14,7 @@ myImage.onclick = function() {
 
 function setUserName(){
 	let myName = prompt('What is your name?');
-	if (myName == ""){
+	if (myName == "" || myName == null){
 		localStorage.setItem('name', 'Hacker man')
 	}else{
 		localStorage.setItem('name', myName);
@@ -22,7 +22,7 @@ function setUserName(){
 	myHeading.textContent = localStorage.getItem('name') + myDefHeading;
 }
 
-if(!localStorage.getItem('name')) {
+if(!localStorage.getItem('name')){
   	setUserName();
 }else{
   	let storedName = localStorage.getItem('name');
